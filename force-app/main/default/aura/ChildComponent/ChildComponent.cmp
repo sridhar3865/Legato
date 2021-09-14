@@ -1,0 +1,21 @@
+<aura:component >
+    <aura:attribute name="childcontactName" type="String" />
+     <aura:attribute name="childToParent" type="String" />
+    <aura:registerEvent name="sampleCmpEvent" type="c:ChildToParentEvent" />
+    <div class="lightingGreen">
+    value in child from parent :
+        {!v.childcontactName}
+     </div>
+   
+   <div onkeyup="{! c.handlekeyUp }">
+     <lightning:input
+          name="enter-search"
+          lable="child component input"
+          type="search"
+          value="{!v.childToParent}"
+         />
+    </div>
+    <div class="lightingGreen">
+    child component input value : {!v.childToParent}
+    </div>
+    </aura:component>

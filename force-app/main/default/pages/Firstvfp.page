@@ -1,0 +1,18 @@
+<apex:page StandardController="Case">
+<apex:form >
+<apex:pageblock >
+<apex:pageBlockSection title="Case Details" Columns="1">
+<apex:inputField value="{!Case.Priority}" />
+<apex:inputField value="{!Case.Status}" />
+<apex:inputField value="{!Case.Subject}"/>
+<apex:inputField value="{!Case.Type}"/>
+<apex:inputField value="{!Case.Reason}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Button Details" Columns="1">
+<apex:commandButton value="Save" action="{!Save}"/>
+<apex:commandButton value="Cancel" action="{!Cancel}"/>
+<apex:commandButton value="Creare" action="{!Create}"/>
+</apex:pageBlockSection>
+</apex:pageblock>
+</apex:form>
+ </apex:page>

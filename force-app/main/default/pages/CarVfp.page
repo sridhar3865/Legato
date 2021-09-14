@@ -1,0 +1,25 @@
+<apex:page Controller="CarController">
+<apex:form >
+<apex:pageblock >
+<apex:pageBlockSection title="Car Details"  columns="1" rendered="true" > 
+<apex:inputField value="{!Car.Name}"  />
+<apex:inputField value="{!Car.CarModel__c}" />
+<apex:inputField value="{!Car.CarNumber__c}"/>
+<apex:inputField value="{!Car.CarPrice__c}"/>
+<apex:inputField value="{!Car.Email__c}"/>
+</apex:pageBlocksection>
+<apex:pageBlockSection title="Car Information" columns="1" rendered="true">
+<apex:inputField value="{!Car.CarOwner__c}"/>
+<apex:inputField value="{!Car.OwnerNumber__c}"/>
+<apex:inputField value="{!Car.Branch__c}"/>
+<apex:inputField value="{!Car.Area__c}" />
+</apex:pageBlockSection>
+</apex:pageblock>
+<apex:outputPanel >
+<apex:commandButton value="Save" action="{!doInsert}"/>
+<apex:commandButton value="Edit" action="{!Edit}"/>
+<apex:commandButton value="Cancel" action="{!Cancel}"/>
+
+</apex:outputPanel>
+</apex:form>
+ </apex:page>

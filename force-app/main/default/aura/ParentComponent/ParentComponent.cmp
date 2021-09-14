@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="contactName" type="String" default='Test'/>
+    <aura:attribute name="childVariable" type="String"/>
+    <aura:handler name="sampleCmpEvent" event="c:ChildToParentEvent" action="{!c.parentComponentEvent}"/>
+    <lightning:input
+                     name="enter-search"
+                     label="parent component input"
+                     type="Search"
+                     value="{!v.contactName}"
+                     />
+    {!v.contactName}
+    <div>
+    child component exuction---->
+        <c:ChildComponent childcontactName="{!v.contactName}"/>
+    </div>
+    <div>
+    value from child childVariable : {!v.childVariable}
+    </div>
+    </aura:component>

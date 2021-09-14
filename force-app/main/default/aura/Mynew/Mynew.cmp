@@ -1,0 +1,32 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+<!--String   String nameOfstudent-->
+    <aura:attribute name="nameOfstudent" type="String" default="Sridhar" />
+    <!--Integer-->
+    <aura:attribute name="ageOfstudent" type="Integer" default="28" />
+    <!--Standard account acc Sobject-->
+    <aura:attribute name="acc" type="Account" />
+    <aura:attribute name="numbersList" type="Integer[]" description="This attribute holds an array of integers"/>
+    <aura:attribute name="numbersList2" type="List" description="This attribute holds an array of integers"/>
+    <aura:attribute name="mapVariable" type="Map" default= "{ Sridhar: 1, Reddy: 4, Maguluri: 8}"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    {!v.nameOfstudent} <!--each time front end will render -->
+    {#v.nameOfstudent} <!-- single time render -->
+   
+    <!--if(ageOfstudent >15)-->
+<aura:if isTrue="{!v.ageOfstudent > 30}">
+      True
+   <aura:set attribute="else">
+      False
+    </aura:set>
+    </aura:if>
+    <!--for(string str:ListStrings 
+    <aura:iteration items="1,2,3,4,5,6,7,8" var="item">
+        <meter value="{!item / 8}"/><br/>
+        </aura:iteration>-->
+    {!v.mapVariable}
+    <aura:iteration items="{!v.mapVariable}" var="variableName" IndexVar="key">
+        inside itteration
+        {!v.mapVariable.key} - {!v.mapVariable.value}<br/><br/>
+        </aura:iteration>
+    </aura:component>

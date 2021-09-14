@@ -1,0 +1,73 @@
+<apex:page controller="EmployeeController">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection title="Employee Details">
+<table>
+<tr>
+<td>Name
+<apex:inputText value="{!Name}"/>
+</td>
+</tr>
+
+<tr>
+<td>EmpID
+<apex:inputText value="{!EmpID}"/>
+</td>
+</tr>
+
+<tr>
+<td>FatherName
+<apex:inputText value="{!FatherName}"/>
+</td>
+</tr>
+
+<tr>
+<td>MobileNumber
+<apex:inputText value="{!MobileNumber}"/>
+</td>
+</tr>
+
+<tr>
+<td>Address
+<apex:inputText value="{!Address}"/>
+</td>
+</tr>
+
+
+<tr>
+<td>Designation
+<apex:inputText value="{!Designation}"/>
+</td>
+</tr>
+
+<tr>
+<td>Experiance
+<apex:inputText value="{!Experiance}"/>
+</td>
+</tr>
+
+<tr>
+<td>Email
+<apex:inputText value="{!Email}"/>
+</td>
+</tr>
+
+<!--<tr>
+<td>LaunchDate
+<apex:inputText value="{!LaunchDate}"/>
+</td>
+</tr> -->
+
+<tr>
+<td>
+<apex:commandButton value="INSERT" action="{!doINSERT}"/>
+</td>
+</tr>
+</table>
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+</apex:form>
+ 
+</apex:page>

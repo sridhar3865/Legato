@@ -1,0 +1,7 @@
+<aura:component >
+	<aura:attribute Name="childcontactName" Type="String"/>
+    <div>
+value in child from parent:
+    {!v.childcontactName}
+    </div>
+</aura:component>

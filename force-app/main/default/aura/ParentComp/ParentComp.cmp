@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="contactName" type="String" default='test'/>
+    <lightning:input
+             name="enter-serch"
+             label="parent component input"
+             type="search"
+                     value="{!v.contactName}"/>
+    
+    {!v.ContactName}
+<div>
+Child component execution ------>
+    <c:ChildComp childcontactName="{!v.contactName}"/>
+    </div>
+    </aura:component>

@@ -1,0 +1,49 @@
+<apex:page sidebar="true"  controller="StudentController">
+    <apex:form >
+        <div style="border:1px solid; width:280px;">
+            <div style="height:30px;width:150px;margin-top:20px;margin-left:20px;font-size:15px;color:Cyan;">
+                <center>Enter Student Details</center>
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        Name
+                    </td>
+                    <td>
+                        <apex:inputtext value="{!name}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        State
+                    </td>
+                    <td>
+                        <apex:inputtext value="{!state}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Country
+                    </td>
+                    <td>
+                        <apex:inputtext value="{!country}" />
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        Teacher
+                    </td>
+                    <td>
+                        <apex:inputtext value="{!teacher}"/>
+                    </td>
+                </tr>
+                <tr >
+                    <td colspan="2" align="center">
+                        <apex:commandButton value="INSERT" style="color:green;" action="{!ObjInsert}" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </apex:form>
+</apex:page>

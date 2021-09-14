@@ -1,0 +1,15 @@
+<apex:page controller="repeatCon" id="thePage">
+ 
+    <apex:repeat value="{!strings}" var="string" id="theRepeat">
+ 
+        <apex:outputText value="{!string}" id="theValue"/><br/>
+        
+<span id="thePage:theRepeat:0:theValue">ONE</span><br/>
+ 
+<span id="thePage:theRepeat:1:theValue">TWO</span><br/>
+ 
+<span id="thePage:theRepeat:2:theValue">THREE</span><br/>
+ 
+    </apex:repeat>
+ 
+</apex:page>

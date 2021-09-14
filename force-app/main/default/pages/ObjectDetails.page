@@ -1,0 +1,12 @@
+<apex:page Controller="CarinfoController" >
+    <apex:form > 
+        <apex:pageBlock >           
+            <apex:pageBlockTable value="{!records}" var="C" >
+                <apex:column value="{!C.Name}"/> 
+                <apex:column value="{!C.CarModel__c}"/>
+                <apex:column value="{!C.CarOwner__c}"/>
+                <apex:column value="{!C.CarPrice__c}"/>
+            </apex:pageBlockTable>           
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

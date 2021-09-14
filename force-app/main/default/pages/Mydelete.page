@@ -1,0 +1,27 @@
+<apex:page controller="DeleteController" sidebar="True">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!Car}" var="C">
+                    <apex:column headerValue="Action">
+                        <apex:Commandlink value="Delete" action="{!DoDelete}">
+                            <apex:param name="CId" value="{!C.Id}" assignTo="{!CId}"/>
+                        </apex:Commandlink>
+                    </apex:column>
+                    <apex:column headerValue="Name">
+                        {!C.Name}
+                    </apex:column>
+                    <apex:column headerValue="Branch">
+                        {!C.Branch__c}
+                    </apex:column>
+                    <apex:column headerValue="Area">
+                        {!C.Area__c}
+                    </apex:column>
+                    <apex:column headerValue="CarPrice">
+                        {!C.CarPrice__c}
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

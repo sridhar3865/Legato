@@ -1,0 +1,32 @@
+<apex:page sidebar="false" standardController="stud__c" recordSetVar="rec">
+  <apex:form >
+       <apex:pageBlock >
+          <apex:pageBlockSection >
+              <apex:pageBlockTable value="{!rec}" var="r">
+                  <apex:column headerValue="Name">
+                    <apex:actionSupport event="onclick" rerender="out" status="status">
+                      {!r.Name}
+                      <apex:param name="rId" value="{!r.Id}"/>
+                    </apex:actionSupport>
+                  </apex:column>
+                  <apex:column headerValue="StuEmail">
+                      {!r.StuEmail__c}
+                  </apex:column>
+                  <apex:column headerValue="Stu_id">
+                      {!r.Stu_id__c}
+                  </apex:column>
+                  <apex:column headerValue="Stu_Percent">
+                      {!r.Stu_Percent__c}
+                  </apex:column>
+          </apex:pageBlockTable>
+      <apex:actionstatus id="status" startText="loading.......">
+          <apex:facet name="stop">
+              <apex:outputpanel id="out">
+                  <apex:detail subject="{!$CurrentPage.parameters.rId}" relatedList="false"/>
+              </apex:outputpanel>  
+          </apex:facet>
+      </apex:actionstatus>
+              </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

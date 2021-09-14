@@ -1,0 +1,19 @@
+<apex:page Controller="StudController">
+ <apex:form >
+       <apex:pageBlock >
+                <apex:pageBlockSection title="Student Information" Columns="1">
+                <apex:inputField value="{!Stud.Name}"/>
+                    <apex:inputField value="{!Stud.Student_Notice_Board__c}"/>
+                    <apex:inputField value="{!Stud.StuEmail__c}"/>
+                    <apex:inputField value="{!Stud.Stu_id__c}"/>
+                    <apex:inputField value="{!Stud.Stu_Percent__c}"/>
+                    <apex:inputField value="{!Stud.Teacher__c}"/>
+                    
+       </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+             <apex:commandButton value="insert" action="{!doinsert}"/>
+            
+         </apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>
+</apex:page>
