@@ -1,0 +1,161 @@
+List<Account> accList = new List<Account>();
+account acc = new Account();
+acc.name ='test1509';
+system.debug('acc====>' +acc);
+accList.add(acc);
+
+account acc1 = new Account();
+acc1.name ='test1609';
+system.debug('acc1====>' +acc1);
+accList.add(acc1);
+system.debug('acclist====>' +acclist);
+insert accList;
+
+
+List<Integer> MyList = new List<Integer>();
+MyList.add(33);
+MyList.add(43);
+MyList.add(1,53);
+system.debug('Mylist====>' +MyList);
+Integer i=MyList.get(0);
+system.debug('i====>' +i);
+MyList.set(0,99);
+system.debug('Mylist====>' +MyList);
+MyList.clear();
+system.debug('acclist====>' +MyList);
+
+
+Account a= new Account(Name='KGF',BillingCity='Addanki');
+system.debug('a====>' +a);
+Account b= new Account();
+system.debug('b====>' +b);
+Account[] q1= new Account[]{a,b};
+    system.debug('q1====>' +q1);
+Account[] q2=q1.clone();
+system.debug('q2====>' +q2);
+q1[0].BillingCity='Ongole';
+system.debug('q1====>' +q1);
+system.debug('q1[0]====>' +q1[0].BillingCity);
+
+System.assertEquals('Ongole',q1[0].BillingCity);
+System.assertEquals('Ongole',q2[0].BillingCity);
+
+
+list<string> Acc_holder=new list<string>();
+Acc_holder.add('phani');
+Acc_holder.add('sreenu');
+Acc_holder.add('sridhar');
+system.debug('my list is :'+Acc_holder);
+
+string i=Acc_holder.get(2); //retraive value 2nd index position
+system.debug('i :'+i);
+
+Acc_holder.set(1,'balu');   // set value in particular position
+system.debug('my list is :'+Acc_holder);
+
+Acc_holder.remove(1);   // remove particular value
+system.debug('remove :'+Acc_holder);
+
+integer len;
+len=Acc_holder.size();   // remove particular value
+system.debug('len :'+len);
+
+boolean checkval;
+checkval=Acc_holder.IsEmpty();  //list is empty or not
+system.debug('checkval :'+checkval);
+
+boolean val;
+val=Acc_holder.contains('sridhar');  //list is empty or not
+system.debug('val :'+val);
+
+set<string> Acc_holder1=new set<string>();
+Acc_holder1.add('raju');
+Acc_holder1.add('babu');
+Acc_holder1.add('janu');
+system.debug('my list is :'+Acc_holder1);
+
+Acc_holder1.remove('babu');   // remove particular value
+system.debug('remove :'+Acc_holder1);
+*/
+map<integer,string> my_map=new map<integer,string>();
+my_map.put(101,'radha');
+my_map.put(104,'niru');
+my_map.put(102,'nag');
+my_map.put(103,'venu');
+system.debug('my map is :'+my_map);
+
+set<integer> keys=new set<integer>();
+
+keys=my_map.keyset();
+system.debug('keys :'+keys);
+
+list<string> val=new list<string>();
+
+val=my_map.values();
+system.debug('vals :'+val);
+
+
+
+Map<Integer, String> m1 = new Map<Integer, String>();
+m1.put(1, 'First item');
+m1.put(2, 'Second item');
+System.debug(m1);
+Map<Integer, String> m2 = new Map<Integer, String>(m1);
+// The map elements of m2 are copied from m1
+System.debug(m2);
+
+Account a = new Account(Name='Acme', BillingCity='New York');
+Map<Integer, Account> map1 = new Map<Integer, Account> {};
+system.debug('map1====>' +map1);
+map1.put(1, a);
+Map<Integer, Account> map2 = map1.clone();
+system.debug('map2====>' +map2);
+map1.get(1).BillingCity = 'San Francisco';
+system.debug('mappp====>' +map1.get(1).BillingCity);
+System.assertEquals('San Francisco',map1.get(1).BillingCity);
+System.assertEquals('San Francisco',map2.get(1).BillingCity);
+
+Map<String, String> colorCodes = new Map<String, String>();
+colorCodes.put('Red', 'FF0000');
+colorCodes.put('Blue', '0000A0');
+colorCodes.put('Green', '000FA0');
+system.debug('colors====>' +colorCodes);
+Boolean contains = colorCodes.containsKey('Blue');
+system.debug('colors====>' +contains);
+System.assertEquals(true, contains);
+
+Map<String, String> colorCodes = new Map<String, String>();
+colorCodes.put('Red', 'FF0000');
+colorCodes.put('Blue', '0000A0');
+system.debug('colors====>' +colorCodes);
+String code = colorCodes.get('Blue');
+system.debug('code====>' +code);
+System.assertEquals('0000A0', code);
+system.debug('col====>' +colorCodes);
+String code2 = colorCodes.get('Magenta');
+system.debug('code2====>' +code2);
+System.assertEquals(null, code2);
+
+List<Account> accts = new List<Account>();
+accts.add(new Account(Name='Account1'));
+accts.add(new Account(Name='Account2'));
+system.debug('accts====>' +accts);
+insert accts;
+Map<Id, Account> m = new Map<Id, Account>();
+system.debug('m====>' +m);
+m.putAll(accts);
+system.debug('m====>' +m);
+System.assertEquals(2, m.size());
+
+
+list<account>myAccounts = new list<account>();
+myAccounts = [Select ID, Name from Account limit 10]; 
+system.debug('myAccounts====>' +myAccounts);
+map<id,string>myAMap = new map<id,string>();
+system.debug('myAMap====>' +myAMap);
+for ( Account a : myAccounts ){
+myAMap.put(a.ID, a.Name);
+    } 
+for ( ID aID : myAMap.keySet() ){
+system.debug(loggingLevel.debug, myAMap.get(aID));
+    } 
