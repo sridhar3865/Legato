@@ -21,7 +21,7 @@
     
 	<target name="dep"><!--  deployment to destination org -->
       <!-- Upload the contents of the "codepkg" directory, running the tests for just 1 class -->
-      <sf:deploy username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="Final" rollbackOnError="true" >      	    	       	   
+      <sf:deploy username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="D:\GIT\Legato\Legato\force-app\main\default" rollbackOnError="true" >      	    	       	   
       </sf:deploy>
     </target>
 		
@@ -29,19 +29,19 @@
     <!-- Shows retrieving code-->
     <target name="get">
       <!-- Retrieve the contents listed in the file codepkg/package.xml into the codepkg directory -->
-      <sf:retrieve username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="Final" unpackaged="Final/package.xml"/>
+      <sf:retrieve username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="D:\GIT\Legato\Legato\force-app\main\default" unpackaged="D:\GIT\Legato\Legato\manifest\package.xml"/>
     </target>
 
       <!-- Shows check only; never actually saves to the server with specified test classes -->
     <target name="ValidationwithTestClass">
-      <sf:deploy username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="Final" checkOnly="true" testLevel="RunSpecifiedTests">
+      <sf:deploy username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="D:\GIT\Legato\Legato\force-app\main\default" checkOnly="true" testLevel="RunSpecifiedTests">
 	  <runTest>CLO_workordertriggerhandlerTest</runTest>
 	  <runTest>CLO_WorkOrderControllerTest</runTest>
 	   </sf:deploy>
     </target>
 	<!-- Shows check only; never actually saves to the server  -->
 	<target name="Check">
-      <sf:deploy username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="Final" checkOnly="true" >
+      <sf:deploy username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="D:\GIT\Legato\Legato\force-app\main\default" checkOnly="true" >
 	
 	   </sf:deploy>
     </target>
